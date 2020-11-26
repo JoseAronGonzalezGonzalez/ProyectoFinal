@@ -3,30 +3,48 @@
 <head>
 	<meta charset="UTF-8">
 	<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-	<link rel="stylesheet" type="text/css" href="./assets/css/estilo.css?v=0.0.3" media="all">
-	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="./assets/css/estilo.css?v=0.0.2" media="all">
+	<title>Peliculas</title>
 </head>
 <body>
-	<div class="barra-menu">
+	<div class="barraMenu">
 		<div>
 			<img src="./assets/img/logoPelicula2.png">	
 		</div>
-		<div>
-			<ul>
+		<div style="color: white">
+			<ul style="display: inline-flex;">
 				<li>
-					
+					Inicio
 				</li>
+				<!-- <li>
+					
+				</li> -->
 			</ul>
 		</div>
 		<div class="btn-reg-log">
 			<!-- <button>iniciar secion</button> -->
-			<button id="btn-abrir-popup" class="btn-abrir-popup">Iniciar Sesion</button>
-			<button>registrar</button>
+			<!-- btn-abrir-popup -->
+			<!-- <button id="btn-abrir-popup" href ="./inicioSession/index.php" class="btn-abrir-popup">Iniciar Sesion</button> -->
+			<!-- <a href="./inicioSession/index.php"></a> -->
+
+
 		</div>
 	</div>
 
-	<div>
-		<h1>UNA IDEA PERO CREO QUE ASI NO LA VOY HACER LA PAGUINA</h1>
+	<div id="vistapeliculas">
+		<div>
+			<div>
+				<div id="lamejorespeliculas">
+					<h2>Las mejores peliculas y recomendadas</h2>
+				</div>
+				<div>
+					<h2></h2>
+				</div>
+			</div>
+			<div>
+				
+			</div>
+		</div>
 	</div>
 
 

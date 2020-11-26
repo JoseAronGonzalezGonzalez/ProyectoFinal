@@ -5,9 +5,13 @@ body{
 	padding: 0;
 }
 
-.barra-menu{
+.barraMenu{
 	display: flex;
 	background-color: black;
+}
+
+.barraMenu img{
+	width: 145px;
 }
 
 .btn-reg-log{
@@ -140,4 +144,24 @@ body{
 @keyframes entradaInputs {
 	from { opacity: 0; }
 	to { opacity: 1; }
+}
+
+
+#vistapeliculas{
+
+	background-color: #1a1a1a;
+	color: white;
+	padding: 50px 50px;
+}
+
+#vistapeliculas h2{
+
+	margin: 0;
+}
+
+#lamejorespeliculas {
+	display: inline-flex;
+	background-color: #393187;
+	padding: 10px 20px;
+	border-radius: 5px;
 }
