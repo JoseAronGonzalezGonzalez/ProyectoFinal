@@ -61,11 +61,17 @@
 				<td>
 					<?= $movie['id'] ?>
 				</td>
-				<td></td>
+				<td>
+					<?= $movie['title'] ?>
+				</td>
 				<td>
 					<img style="width: 10%" src="../assets/img/movies/<?= $movie['cover'] ?>">
 				</td>
 				<td>
+					<?= $movie['minutes'] ?>
+				</td>
+				<td>
+					<?= $movie['category_id'] ?><br>
 					<a href="details/?id=<?= $movie['id'] ?>">
 						show details
 					</a>
@@ -115,8 +121,10 @@
 				Clasification
 			</label>
 			<select  name="clasification" required="">
+				<option> C </option>
 				<option> B15 </option>
 				<option> BA </option>
+				<option> A </option>
 			</select>
 			<br>
 
