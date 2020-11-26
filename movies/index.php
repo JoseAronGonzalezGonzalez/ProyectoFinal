@@ -58,19 +58,19 @@
 		<tbody>
 			<?php foreach ($movies as $movie): ?>
 			<tr>
-				<td>
+				<td style="padding: 0px 20px">
 					<?= $movie['id'] ?>
 				</td>
-				<td>
+				<td style="padding: 0px 10px">
 					<?= $movie['title'] ?>
 				</td>
-				<td>
-					<img style="width: 10%" src="../assets/img/movies/<?= $movie['cover'] ?>">
+				<td style="text-align: center;width: 55%;">
+					<img style="width: 15%" src="../assets/img/movies/<?= $movie['cover'] ?>">
 				</td>
-				<td>
+				<td style="text-align: center;">
 					<?= $movie['minutes'] ?>
 				</td>
-				<td>
+				<td style="padding: 0px 20px"> 
 					<?= $movie['category_id'] ?><br>
 					<a href="details/?id=<?= $movie['id'] ?>">
 						show details
