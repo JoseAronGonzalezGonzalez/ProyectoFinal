@@ -11,7 +11,11 @@
 	// if (!isset($_SESSION['id']) || $_SESSION['role'] != "admin") {
 	// 	header("Location:../");
 	// }
+	if (isset($_SESSION)==false || isset($_SESSION['id'])==false) {
+		header("Location:../");
+	}
 
+	
 	#echo json_encode($movies);
 ?>
 <!DOCTYPE html>
@@ -82,7 +86,7 @@
 		</tbody>
 	</table>
 
-	<form action="../app/movieController.php" method="POST" enctype="multipart/form-data" >
+	<form action="../movie" method="POST" enctype="multipart/form-data" >
 		<fieldset>
 			<legend>
 				Add Movie
@@ -153,7 +157,7 @@
 				Save
 			</button>
 			<input type="hidden" name="action" value="store">
-
+			<input type="hidden" name="token" value="<?= $_SESSION['token'] ?>">
 		</fieldset>
 	</form>
 </body>

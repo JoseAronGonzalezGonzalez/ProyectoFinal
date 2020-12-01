@@ -3,28 +3,32 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-if (!isset($_SESSION)) {
-	session_start();
-}
+
+include_once 'app.php';
 include_once "connectionController.php";
 
 if (isset($_POST['action'])) {
+	if (isset($_POST['token']) && $_POST['token']==$_SESSION['token']) {
 
-	$movieController = new MovieController();
+		$movieController = new MovieController();
 
-	switch ($_POST['action']) {
-		case 'store':
+		switch ($_POST['action']) {
+			case 'store':
 
-			$title = strip_tags($_POST['title']);
-			$descripiton = strip_tags($_POST['descripiton']);
-			$minutes = strip_tags($_POST['minutes']);
-			$clasification = strip_tags($_POST['clasification']);
-			$category_id = strip_tags($_POST['category_id']);
+				$title = strip_tags($_POST['title']);
+				$descripiton = strip_tags($_POST['descripiton']);
+				$minutes = strip_tags($_POST['minutes']);
+				$clasification = strip_tags($_POST['clasification']);
+				$category_id = strip_tags($_POST['category_id']);
 
-			$movieController->store($title,$descripiton,$minutes,$clasification,$category_id);
-		break; 
+				$movieController->store($title,$descripiton,$minutes,$clasification,$category_id);
+			break; 
+		}
+	}else{
+		$_SESSION['error'] = 'de seguridad';
+		header("location:". $_SERVER['HTTP_REFERER'] );
 	}
-}
+}	
 
 class MovieController
 {

@@ -1,41 +1,44 @@
 <?php
 
-if (!isset($_SESSION)) {
-	session_start();
-}
+include_once 'app.php';
 include_once "connectionController.php";
 
 if (isset($_POST['action'])) {
-	
-	$categoryController = new CategoryController();
+	if (isset($_POST['token']) && $_POST['token']==$_SESSION['token']) {
 
-	switch ($_POST['action']) {
-		case 'store':
-			
-			$name = strip_tags($_POST['name']);
-			$description = strip_tags($_POST['description']);
-			$status = strip_tags($_POST['status']);
+		$categoryController = new CategoryController();
 
-			$categoryController->store($name,$description,$status);
+		switch ($_POST['action']) {
+			case 'store':
+				
+				$name = strip_tags($_POST['name']);
+				$description = strip_tags($_POST['description']);
+				$status = strip_tags($_POST['status']);
 
-		break; 
-		case 'update':
+				$categoryController->store($name,$description,$status);
 
-			$name = strip_tags($_POST['name']);
-			$description = strip_tags($_POST['description']);
-			$status = strip_tags($_POST['status']);
-			$id = strip_tags($_POST['id']);
+			break; 
+			case 'update':
 
-			$categoryController->update($id,$name,$description,$status);
-		break;
-		case 'destroy':
+				$name = strip_tags($_POST['name']);
+				$description = strip_tags($_POST['description']);
+				$status = strip_tags($_POST['status']);
+				$id = strip_tags($_POST['id']);
 
-			$id = strip_tags($_POST['id']);
+				$categoryController->update($id,$name,$description,$status);
+			break;
+			case 'destroy':
+				
+				$id = strip_tags($_POST['id']);
 
-			$categoryController->destroy($id);
-		break;
+				$categoryController->destroy($id);
+			break;
+		}
+		
+	}else{
+		$_SESSION['error'] = 'de seguridad';
+		header("location:". $_SERVER['HTTP_REFERER'] );
 	}
-
 }
 
 class CategoryController
@@ -141,16 +144,20 @@ class CategoryController
 
 					header("Location:".$_SERVER['HTTP_REFERER']);
 				}else{
+
 					header("Location:".$_SERVER['HTTP_REFERER']);
 				}
 
+
 			}else{
 				header("Location:".$_SERVER['HTTP_REFERER']);
+
 			}
 
 
 		}else{
 			header("Location:".$_SERVER['HTTP_REFERER']);
+
 		}
 	}
 }

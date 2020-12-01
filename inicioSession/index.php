@@ -1,3 +1,9 @@
+<?php
+
+	include '../app/app.php';
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,21 +13,31 @@
 	<title>Loggin o registro</title>
 </head>
 <body>
-	<div class="login"> 
+
+	<?php include "../layouts/alerts.template.php"; ?>
+
+
+
+	<form class="login" method="POST" action="../auth"> 
 		<img src="../assets/img/logoPelicula2.png">
 		<div class="loginHeder">
 			<div class="PrinciLogin">
-				<h1>Inicia sesion</h1>
+				<h1>Registro</h1>
 				<div>
+					<label>Nombre completo: </label><br>
+					<input type="text" name="name" required=""><br>
 					<label>Correo:</label><br>
-					<input type="email" name="email1" id="email1" placeholder="ingresa tu correo"><br>
+					<input type="email" name="email1" id="email1" placeholder="ingresa tu correo valido" required=""><br>
 					<label>Contraseña:</label><br>
-					<input type="password" name="email" id="email"><br>
+					<input type="password" name="password" id="password" required=""><br>
 					<div class="areaRegistro">
-						<button>Iniciar sesion</button><br>
+						<button type="submit">Registro</button><br>
 
-						<label>¿Quires registrarte?</label><a href="">Resgistrate</a>
+						<input type="hidden" name="action" value="register">
+						<input type="hidden" name="token" value="<?= $_SESSION['token'] ?>">
+
 					</div>
+					<a href="../index.php">Cancelar</a><br>
 				</div>
 			</div>
 		</div>
@@ -30,7 +46,4 @@
  				<span>Privacy Policy</span> | This is a sample website - cmsmasters © 2020 / All Rights Reserved
  			</p>
 		</div>
-	</div>
-
-</body>
-</html>
+	</form>
