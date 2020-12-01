@@ -72,6 +72,7 @@ class AuthController
 
 		}
 	}else{
+		echo "error de inicio";
 		$_SESSION['error'] = 'verifique la informacion';
 
 		header("location:". $_SERVER['HTTP_REFERER']);
@@ -108,7 +109,7 @@ class AuthController
 						$_SESSION['email'] = $user['email'];
 
 
-						header("Location:".BASE_PATH."category");
+						header("Location:".BASE_PATH."principal");
 					}
 
 				}else{

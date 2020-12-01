@@ -1,12 +1,12 @@
 
 <?php
 
-	include '../app/app.php';
+	include 'app/app.php';
 ?>
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,16 +15,16 @@
 </head>
 <body>
 
-	<?php include "../layouts/alerts.template.php"; ?>
+	<?php include "layouts/alerts.template.php"; ?>
 
-	<form class="login" method="POST" action="../auth"> 
+	<form class="login" method="POST" action="auth"> 
 		<img src="assets/img/logoPelicula2.png">
 		<div class="loginHeder">
 			<div class="PrinciLogin">
 				<h1>Inicia sesion</h1>
 				<div>
 					<label>Correo:</label><br>
-					<input type="email" name="email1" id="email1" placeholder="ingresa tu correo" required=""><br>
+					<input type="email" name="email" id="email" placeholder="ingresa tu correo" required=""><br>
 					<label>Contraseña:</label><br>
 					<input type="password" name="password" id="password" required=""><br>
 					<div class="areaRegistro">
@@ -46,9 +46,9 @@
 	</form>
 
 
-	<form method="POST" action="../auth">
+<!-- 	<form method="POST" action="auth">
 
-	</form>
+	</form> -->
 
 </body>
 </html>

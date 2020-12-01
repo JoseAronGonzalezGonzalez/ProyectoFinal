@@ -15,8 +15,6 @@
 		header("Location:../");
 	}
 
-	
-	#echo json_encode($movies);
 ?>
 <!DOCTYPE html>
 <html>

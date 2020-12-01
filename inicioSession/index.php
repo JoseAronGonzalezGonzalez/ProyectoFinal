@@ -27,7 +27,7 @@
 					<label>Nombre completo: </label><br>
 					<input type="text" name="name" required=""><br>
 					<label>Correo:</label><br>
-					<input type="email" name="email1" id="email1" placeholder="ingresa tu correo valido" required=""><br>
+					<input type="email" name="email" id="email" placeholder="ingresa tu correo valido" required=""><br>
 					<label>Contraseña:</label><br>
 					<input type="password" name="password" id="password" required=""><br>
 					<div class="areaRegistro">

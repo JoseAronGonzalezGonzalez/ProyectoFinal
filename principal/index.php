@@ -1,12 +1,36 @@
+
+<?php 
+	include "../app/categoryController.php";
+	include "../app/movieController.php";
+
+	$categoryController = new CategoryController();
+	$movieController = new MovieController();
+
+	$categories = $categoryController->get();
+	$movies = $movieController->get();
+
+	// if (!isset($_SESSION['id']) || $_SESSION['role'] != "admin") {
+	// 	header("Location:../");
+	// }
+	if (isset($_SESSION)==false || isset($_SESSION['id'])==false) {
+		header("Location:../");
+	}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-	<link rel="stylesheet" type="text/css" href="../assets/css/estilo.css?v=0.0.2" media="all">
+	<link rel="stylesheet" type="text/css" href="../assets/css/estilo.css?v=0.0.3" media="all">
+
 	<title>Peliculas</title>
 </head>
 <body>
+
+	<?php include "../layouts/alerts.template.php"; ?>
+
 	<div class="barraMenu">
 		<div>
 			<img src="../assets/img/logoPelicula2.png">	
@@ -19,6 +43,12 @@
 				<!-- <li>
 					
 				</li> -->
+				<li>
+					Recomendaciones de peliculas
+				</li>
+				<li>
+					Estrenos
+				</li>
 			</ul>
 		</div>
 		<div class="btn-reg-log">
@@ -38,11 +68,28 @@
 					<h2>Las mejores peliculas y recomendadas</h2>
 				</div>
 				<div>
-					<h2></h2>
+					<h2> </h2>
+					<?php foreach ($movies as $movie): ?>
+						<div style="text-align: center;">
+							<img style="width: 10%" src="../assets/img/movies/<?= $movie['cover'] ?>">
+						</div>
+
+						<div style="text-align: center;">
+							<?= $movie['title'] ?>
+						</div>
+						
+						<br>
+						<!-- <td style="text-align: center;">
+							<?= $movie['minutes'] ?>
+						</td> -->						
+					<?php endforeach ?>
+
+					<div class="derechos">
+						<p>
+ 							<span>Privacy Policy</span> | This is a sample website - cmsmasters © 2020 / All Rights Reserved
+ 						</p>
+					</div>
 				</div>
-			</div>
-			<div>
-				
 			</div>
 		</div>
 	</div>
@@ -64,6 +111,8 @@
 			</div>
 		</div> -->
 
-	<script src="./assets/js/js.js"></script>
+	<!-- <script src="./assets/js/js.js"></script> -->
+
+	
 </body>
 </html>
