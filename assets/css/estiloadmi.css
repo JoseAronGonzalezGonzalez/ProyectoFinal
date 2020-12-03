@@ -1,0 +1,14 @@
+.lateralIzq{
+	position: fixed;
+	text-align: center;
+	padding: 60px;
+	padding-left: 50px;	
+	padding-right: 71px;
+	float: left;
+	box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.15);
+}
+
+.dentroEstatico{
+
+	text-align: left;
+}

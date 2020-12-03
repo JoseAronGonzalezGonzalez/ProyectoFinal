@@ -67,7 +67,7 @@
 					<?= $movie['title'] ?>
 				</td>
 				<td style="text-align: center;width: 55%;">
-					<img style="width: 15%" src="../assets/img/movies/<?= $movie['cover'] ?>">
+					<img style="width: 15%" src="./assets/img/movies/<?= $movie['cover'] ?>">
 				</td>
 				<td style="text-align: center;">
 					<?= $movie['minutes'] ?>

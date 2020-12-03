@@ -2,6 +2,7 @@
 <?php
 
 	include 'app/app.php';
+	// session_destroy();
 ?>
 
 
@@ -28,6 +29,8 @@
 					<label>Contraseña:</label><br>
 					<input type="password" name="password" id="password" required=""><br>
 					<div class="areaRegistro">
+
+						<div class="alerts"><?php echo isset($alerts) ? $alerts : ""; ?></div>
 						<button type="submit">Iniciar sesion</button><br>
 
 						<input type="hidden" name="action" value="login">

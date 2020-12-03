@@ -3,3 +3,5 @@ RewriteEngine on
 RewriteRule ^auth$ app/authController.php
 RewriteRule ^movie$ app/movieController.php
 RewriteRule ^categori$ app/CategoryController.php
+RewriteRule ^categoris$ category/index.php
+RewriteRule ^peliculas$ movies/index.php

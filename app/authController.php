@@ -29,6 +29,7 @@ if (isset($_POST['action'])) {
 
 			$authController->access($email,$password);
 			break;
+
 		}
 	}else{
 		$_SESSION['error'] = 'de seguridad';
@@ -59,7 +60,7 @@ class AuthController
 				$this->access($email,$originalPassword);
 
 			}else{
-				$_SESSION['error'] = 'verifique los datos enviados';
+				$_SESSION['error'] = 'verifique los datos enviados correo ya usado';
 
 				header("location:". $_SERVER['HTTP_REFERER']);
 			}
@@ -107,9 +108,14 @@ class AuthController
 						$_SESSION['id'] = $user['id'];
 						$_SESSION['name'] = $user['name'];
 						$_SESSION['email'] = $user['email'];
+						$_SESSION['rol'] = $user['rol'];
 
+						if ($_SESSION['rol']=="administrador") {
+							header("Location:".BASE_PATH."administra");
+						}else{
 
-						header("Location:".BASE_PATH."principal");
+							header("Location:".BASE_PATH."principal");
+						}
 					}
 
 				}else{
@@ -149,7 +155,9 @@ class AuthController
 	public function logout()
 	{
 
-	}
+		// session_destroy();
+		// header("Location: ./");
+	} 
 
 }
 

@@ -47,6 +47,11 @@
 
 		<?php include "../layouts/alerts.template.php"; ?>
 
+		<div>
+			<a href=""><button type="submit" class="close" title="SALIR">SALIR</a>
+
+		</div>
+
 		<table>
 			<thead>
 				<th>

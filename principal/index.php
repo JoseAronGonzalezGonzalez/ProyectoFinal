@@ -2,13 +2,18 @@
 <?php 
 	include "../app/categoryController.php";
 	include "../app/movieController.php";
+	include "../app/app.php";
 
+	include "../app/authController.php";
 	$categoryController = new CategoryController();
 	$movieController = new MovieController();
+
+	$authController = new AuthController();
 
 	$categories = $categoryController->get();
 	$movies = $movieController->get();
 
+	$apps = $authController->logout();
 	// if (!isset($_SESSION['id']) || $_SESSION['role'] != "admin") {
 	// 	header("Location:../");
 	// }
@@ -38,19 +43,28 @@
 		<div style="color: white">
 			<ul style="display: inline-flex;">
 				<li>
-					Inicio
+					<a href="#">Inicio</a> 
 				</li>
 				<!-- <li>
 					
 				</li> -->
 				<li>
-					Recomendaciones de peliculas
+					<a href="#lamejorespeliculas"> Recomendaciones de peliculas</a>
 				</li>
 				<li>
 					Estrenos
 				</li>
 			</ul>
 		</div>
+
+		<div>
+			
+
+			<a href="../salir.php"><button style="background: none; color: white;" type="submit" class="close" title="SALIR">SALIR</button></a>
+			<input type="hidden" name="action" value="logout">
+			<input type="hidden" name="token" value="<?= $_SESSION['token'] ?>">
+		</div>
+
 		<div class="btn-reg-log">
 			<!-- <button>iniciar secion</button> -->
 			<!-- btn-abrir-popup -->
@@ -84,6 +98,13 @@
 						</td> -->						
 					<?php endforeach ?>
 
+
+
+					<!-- <div>
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/ffZ1V88qQNA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div> -->
+
+					
 					<div class="derechos">
 						<p>
  							<span>Privacy Policy</span> | This is a sample website - cmsmasters © 2020 / All Rights Reserved
