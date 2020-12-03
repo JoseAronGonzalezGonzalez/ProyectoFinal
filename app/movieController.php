@@ -1,7 +1,7 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+// ini_set('display_errors', 1);
+// ini_set('display_startup_errors', 1);
+// error_reporting(E_ALL);
 
 
 include_once 'app.php';
@@ -23,6 +23,24 @@ if (isset($_POST['action'])) {
 
 				$movieController->store($title,$descripiton,$minutes,$clasification,$category_id);
 			break; 
+
+			case 'update':
+
+				$title = strip_tags($_POST['title']);
+				$description = strip_tags($_POST['description']);
+				$minutes = strip_tags($_POST['minutes']);
+				$id = strip_tags($_POST['id']);
+				$category_id = strip_tags($_POST['category_id']);
+				echo "etras";
+				$movieController->update($id,$title,$description,$minutes,$category_id);
+			break;
+			
+			case 'destroy':
+				
+				$id = strip_tags($_POST['id']);
+
+				$movieController->destroy($id);
+			break;
 		}
 	}else{
 		$_SESSION['error'] = 'de seguridad';
@@ -101,4 +119,67 @@ class MovieController
 			header("Location:". $_SERVER['HTTP_REFERER'] );
 		}
 	}
+
+
+	public function update($id,$title,$description,$minutes,$category_id)
+	{
+		$conn = connect();
+		if ($conn->connect_error==false) {
+			
+			if($id !="" && $title!="" && $description!="" && $minutes!="" && $category_id!="" ){
+
+				$query = "update movies set title = ?, description = ?, minutes = ?, category_id = ? where id = ?";
+				$prepared_query = $conn->prepare($query);
+				$prepared_query->bind_param('ssiii',$title,$description,$minutes,$category_id,$id);
+
+				if ($prepared_query->execute()) {
+					
+					header("Location:".$_SERVER['HTTP_REFERER']);
+				}else{
+
+					header("Location:".$_SERVER['HTTP_REFERER']);
+				}
+
+			}else{
+
+				header("Location:".$_SERVER['HTTP_REFERER']);
+			}
+
+		}else{
+
+			header("Location:".$_SERVER['HTTP_REFERER']);
+		}
+	}
+
+	public function destroy($id)
+	{
+		$conn = connect();
+		if ($conn->connect_error==false) {
+			
+			if ($id != "") {
+				
+				$query = "delete from movies where id = ?";
+				$prepared_query = $conn->prepare($query);
+				$prepared_query->bind_param('i',$id);
+				if ($prepared_query->execute()) {
+
+					header("Location:".$_SERVER['HTTP_REFERER']);
+				}else{
+
+					header("Location:".$_SERVER['HTTP_REFERER']);
+				}
+
+
+			}else{
+				header("Location:".$_SERVER['HTTP_REFERER']);
+
+			}
+
+
+		}else{
+			header("Location:".$_SERVER['HTTP_REFERER']);
+
+		}
+	}
+
 }

@@ -14,6 +14,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+	<link rel="stylesheet" type="text/css" href="../assets/css/estiloadmi.css?v=0.0.3" media="all">
 	<title>
 		Categories
 	</title>
@@ -25,10 +27,38 @@
 		#updateForm{
 			display: none;
 		}
+
+		.herramientas{
+
+		 	 float: left;
+   			 position: absolute;
+   			 left: 400px;
+		}
 	</style>
 </head>
 <body>
-	<div>
+
+
+	<div class="lateralIzq">
+		<div class="dentroEstatico">
+			<img src="../assets/img/logoPelicula.png">
+			<div class="op">
+			<a class="op1" href="../peliculas"><p>Agregar,eliminar,editar Una Pelicula</p></a>
+			<a class="op1" href="../category"><p>Agregar una Categoria</p></a>
+			<a class="op1" href="#resume"><p>Resume</p></a>
+			<a class="op1" href="#skills"><p>Skills</p></a>
+			<a class="op1" href="#porta"><p>Portafolio</p></a>
+			<a class="op1" href="#testimonios"><p>Testimonials</p></a>
+			<a class="op1" href="#contacto"><p>Contact</p></a>
+			</div>	
+		</div>
+		<div class="derechos">
+			<p>© Robert Morley Jr. <br>All rights reserved 2020</p>
+		</div>
+	</div>
+
+
+	<div class="herramientas">
 
 		<h1>
 			Categories
@@ -48,7 +78,7 @@
 		<?php include "../layouts/alerts.template.php"; ?>
 
 		<div>
-			<a href=""><button type="submit" class="close" title="SALIR">SALIR</a>
+			<a href="./salir.php"><button type="submit" class="close" title="SALIR">SALIR</a>
 
 		</div>
 
