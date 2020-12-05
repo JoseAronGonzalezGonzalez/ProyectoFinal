@@ -154,7 +154,9 @@ class AuthController
 
 	public function logout()
 	{
-
+		if (isset($_SESSION)) {
+			// session_destroy();		
+		}
 		// session_destroy();
 		// header("Location: ./");
 	} 

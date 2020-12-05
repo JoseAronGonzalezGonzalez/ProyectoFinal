@@ -20,7 +20,7 @@
 <html>
 <head>
 
-	<link rel="stylesheet" type="text/css" href="./assets/css/estiloadmi.css?v=0.0.3" media="all">
+	<link rel="stylesheet" type="text/css" href="./assets/css/estiloadmi.css?v=0.0.1" media="all">
 	<title>
 		Movies administrador
 	</title>
@@ -37,23 +37,25 @@
 
 		 	 float: left;
    			 position: absolute;
-   			 left: 400px;
+   			 left: 370px;
+
+		}
+		body{
+
+			margin: 0;
 		}
 	</style>
 </head>
 <body>
 
-	<div class="lateralIzq">
+	<div class="lateralIzq" style="background-color: black;">
 		<div class="dentroEstatico">
-			<img src="./assets/img/logoPelicula.png">
+			<img src="./assets/img/logoPelicula2.png">
 			<div class="op">
 			<a class="op1" href="./peliculas"><p>Agregar,eliminar,editar Una Pelicula</p></a>
 			<a class="op1" href="./category"><p>Agregar una Categoria</p></a>
-			<a class="op1" href="#resume"><p>Resume</p></a>
-			<a class="op1" href="#skills"><p>Skills</p></a>
-			<a class="op1" href="#porta"><p>Portafolio</p></a>
-			<a class="op1" href="#testimonios"><p>Testimonials</p></a>
-			<a class="op1" href="#contacto"><p>Contact</p></a>
+			<a class="op1" href="./index.php"><p>Salir</p></a>
+			
 			</div>	
 		</div>
 		<div class="derechos">
@@ -62,8 +64,8 @@
 	</div>
 
 	<div class="herramientas">
-		<h1>
-			Movies
+		<h1 >
+			Peliculas
 		</h1>
 
 
@@ -117,7 +119,7 @@
 							Edit Pelicula
 						</button>
 
-						<button onclick="remove(<?= $movie['id'] ?>)" style="background-color: red;color:white;">
+						<button onclick="remove(<?= $movie['id'] ?>)" style="background-color: #393187;color:white;">
 							Delete pelicula
 						</button>
 					</td>

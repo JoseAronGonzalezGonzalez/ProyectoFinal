@@ -1,7 +1,7 @@
 .lateralIzq{
 	position: fixed;
 	text-align: center;
-	padding: 60px;
+	padding: 120px 60px;
 	padding-left: 50px;	
 	padding-right: 71px;
 	float: left;
@@ -11,4 +11,27 @@
 .dentroEstatico{
 
 	text-align: left;
+}
+
+.op1{
+	color: white;
+	/*margin-top: 30px;*/
+}
+
+.op1 p{
+
+	margin-top: 50px;
+}
+h1{
+	color: white;
+	display: inline-flex;
+	background-color: #393187;
+	padding: 10px 20px;
+	border-radius: 5px;
+	margin-bottom: 30px;
+}
+
+body{
+
+	margin: 0;
 }

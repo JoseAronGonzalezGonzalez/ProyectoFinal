@@ -1,4 +1,3 @@
-
 <?php 
 	include "../app/categoryController.php";
 	include "../app/movieController.php";
@@ -28,7 +27,7 @@
 <head>
 	<meta charset="UTF-8">
 	<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-	<link rel="stylesheet" type="text/css" href="../assets/css/estilo.css?v=0.0.2" media="all">
+	<link rel="stylesheet" type="text/css" href="../assets/css/estilo.css?v=0.0.3" media="all">
 
 	<title>Peliculas</title>
 </head>
@@ -37,14 +36,13 @@
 	<?php include "../layouts/alerts.template.php"; ?>
 
 	<div class="barraMenu">
-		<div style="
-    margin-left: 2%;">
+		<div>
 			<img src="../assets/img/logoPelicula2.png">	
 		</div>
 		<div style="color: white">
 			<ul style="display: inline-flex;">
 				<li>
-					<!-- <a href="#"> -->Inicio<!-- </a>  -->
+					<a href="#">Inicio</a> 
 				</li>
 				<!-- <li>
 					
@@ -58,10 +56,10 @@
 			</ul>
 		</div>
 
-		<div style="margin-left: 35%;margin-top: 25px;">
+		<div>
 			
 
-			<a href="../index.php"><button style="background: none; color: white;" type="submit" class="close" title="SALIR">SALIR</button></a>
+			<a ><button style="background: none; color: white;" type="submit" class="close" title="SALIR">SALIR</button></a>
 			<input type="hidden" name="action" value="logout">
 			<input type="hidden" name="token" value="<?= $_SESSION['token'] ?>">
 		</div>
@@ -79,15 +77,15 @@
 	<div id="vistapeliculas">
 		<div>
 			<div>
-				<div id="lamejorespeliculas">
+				<!-- <div id="lamejorespeliculas">
 					<h2>Las mejores peliculas y recomendadas</h2>
-				</div>
-				<div id="catalogo">
+				</div> -->
+				<div >
 					<h2> </h2>
 					<?php foreach ($movies as $movie): ?>
-						<div class="moviesCartelera" style="display: inline-block;">	
+						<div style="display: inline-block;">	
 							<div style="text-align: center;width: 100%;height: 100%;">
-								<a onclick="vista(<?= $movie['id'] ?>,'<?= $movie['title'] ?>')"><img style="width: 100%; border-radius: 10%" src="../assets/img/movies/<?= $movie['cover'] ?>"></a>
+								<a href=""><img style="width: 100%; border-radius: 10%" src="../assets/img/movies/<?= $movie['cover'] ?>"></a>
 							</div>
 
 							<div style="text-align: center;">
@@ -108,14 +106,8 @@
 					</div> -->
 				</div>
 
-				<!-- <div id="infomarcionPeli">
-					<h1>Pelicula</h1>
-					<div id="title">
-						
-					</div>
-					<input type="hidden" name="id" id="id">
-				</div> -->
-
+				
+				
 				<div class="derechos">
 					<p>
  						<span>Privacy Policy</span> | This is a sample website - cmsmasters © 2020 / All Rights Reserved
@@ -144,21 +136,6 @@
 
 	<!-- <script src="./assets/js/js.js"></script> -->
 
-	<script type="text/javascript">
-		
-		function vista(id,title) {
-			document.getElementById('lamejorespeliculas').style.display="none";
-			document.getElementById('catalogo').style.display="none";
-
-			document.getElementById('infomarcionPeli').style.display="block";
-			// document.getElementById('updateForm').style.display="block";
-
-			document.getElementById('title').value = title;
-
-		// 	document.getElementById('description').value = description;
-		// 	document.getElementById('status').value = status;
-		// 	document.getElementById('id').value = id;
-		}
-	</script>
+	
 </body>
 </html>

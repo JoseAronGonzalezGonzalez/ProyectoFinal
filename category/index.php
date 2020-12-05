@@ -15,7 +15,7 @@
 <html>
 <head>
 
-	<link rel="stylesheet" type="text/css" href="../assets/css/estiloadmi.css?v=0.0.3" media="all">
+	<link rel="stylesheet" type="text/css" href="../assets/css/estiloadmi.css?v=0.0.1" media="all">
 	<title>
 		Categories
 	</title>
@@ -32,24 +32,21 @@
 
 		 	 float: left;
    			 position: absolute;
-   			 left: 400px;
+   			 left: 370px;
 		}
 	</style>
 </head>
 <body>
 
 
-	<div class="lateralIzq">
+	<div class="lateralIzq" style="background-color: black";>
 		<div class="dentroEstatico">
-			<img src="../assets/img/logoPelicula.png">
+			<img src="../assets/img/logoPelicula2.png">
 			<div class="op">
 			<a class="op1" href="../peliculas"><p>Agregar,eliminar,editar Una Pelicula</p></a>
 			<a class="op1" href="../category"><p>Agregar una Categoria</p></a>
-			<a class="op1" href="#resume"><p>Resume</p></a>
-			<a class="op1" href="#skills"><p>Skills</p></a>
-			<a class="op1" href="#porta"><p>Portafolio</p></a>
-			<a class="op1" href="#testimonios"><p>Testimonials</p></a>
-			<a class="op1" href="#contacto"><p>Contact</p></a>
+			<a class="op1" href="../index.php"><p>Salir</p></a>
+			
 			</div>	
 		</div>
 		<div class="derechos">
@@ -61,7 +58,7 @@
 	<div class="herramientas">
 
 		<h1>
-			Categories
+			Categorias
 		</h1>
 
 		<?php 
@@ -77,10 +74,10 @@
 
 		<?php include "../layouts/alerts.template.php"; ?>
 
-		<div>
+		<!-- <div>
 			<a href="./salir.php"><button type="submit" class="close" title="SALIR">SALIR</a>
 
-		</div>
+		</div> -->
 
 		<table>
 			<thead>
@@ -117,7 +114,7 @@
 							Edit category
 						</button>
 
-						<button onclick="remove(<?= $category['id'] ?>)" style="background-color: red;color:white;">
+						<button onclick="remove(<?= $category['id'] ?>)" style="background-color: #393187;;color:white;">
 							Delete category
 						</button>
 					</td>
