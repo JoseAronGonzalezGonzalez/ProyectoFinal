@@ -28,7 +28,11 @@
 <head>
 	<meta charset="UTF-8">
 	<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-	<link rel="stylesheet" type="text/css" href="../assets/css/estilo.css?v=0.0.2" media="all">
+	<link rel="stylesheet" type="text/css" href="../assets/css/estilo.css?v=0.0.3" media="all">
+
+	<style type="text/css">
+		
+	</style>
 
 	<title>Peliculas</title>
 </head>
@@ -38,7 +42,7 @@
 
 	<div class="barraMenu">
 		<div style="
-    margin-left: 2%;">
+    		margin-left: 2%;">
 			<img src="../assets/img/logoPelicula2.png">	
 		</div>
 		<div style="color: white">
@@ -108,13 +112,15 @@
 					</div> -->
 				</div>
 
-				<!-- <div id="infomarcionPeli">
+				<div id="infomarcionPeli" style="display: none;">
 					<h1>Pelicula</h1>
 					<div id="title">
-						
-					</div>
+						<div>
+							<iframe width="560" height="315" src="https://www.youtube.com/embed/8-yREEt4uDM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 					<input type="hidden" name="id" id="id">
-				</div> -->
+					</div></div>
+					</div>
+
 
 				<div class="derechos">
 					<p>
